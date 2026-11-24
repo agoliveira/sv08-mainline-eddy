@@ -43,8 +43,14 @@ labelled `3V3 IO CK G`. Connect it to the ST-Link:
 | G | GND |
 
 Check the pin order printed on your own adapter; clones differ. The
-ST-Link powers the board. Photos of both headers are in
-[Rappetor's guide](https://github.com/Rappetor/Sovol-SV08-Mainline#step-6---stock-firmware-backup).
+ST-Link powers the board.
+
+This guide has no pictures of its own. For photos showing where the
+header is on each board, the pinout, and the ST-Link wiring, see
+[step 6 of Rappetor's guide](https://github.com/Rappetor/Sovol-SV08-Mainline#step-6---stock-firmware-backup). The
+same section shows how to read the firmware on Windows with
+STM32CubeProgrammer; if you do that, use the read sizes from the table
+above, because the two boards differ.
 
 **Tool.** Use OpenOCD. With these boards the `stlink` tools
 (`st-flash` 1.8.0 and `stlink-gui`) connected only intermittently,

@@ -41,6 +41,12 @@ Everything here was carried out on **one printer**, in November 2026,
 with Klipper v0.14.0 and Armbian 26.11 (kernel 6.18). Treat it as one
 person's verified notes, not as a tested product.
 
+All the work on the PC side was done on Linux machines. **Windows was
+not tested**, and the PC commands in this guide are Linux commands.
+For Windows, including flashing the boards with STM32CubeProgrammer,
+and for photos of the connectors and pinouts, see
+[Rappetor's guide](https://github.com/Rappetor/Sovol-SV08-Mainline).
+
 Not verified, and marked as such where they appear:
 
 - Cura (only OrcaSlicer was used)
@@ -76,8 +82,8 @@ printer and are written in capitals; replace them with your own:
   boards, found in chapter 5
 - `YOUR_WIFI_NAME`, `YOUR_WIFI_PASSWORD`, `YOUR_ROOT_PASSWORD`
 
-Each command block says where it runs: on your **PC** (a Linux
-computer is assumed) or on the **printer** (over SSH).
+Each command block says where it runs: on your **PC** (Linux; Windows
+was not tested, see Status) or on the **printer** (over SSH).
 
 ## Credits
 

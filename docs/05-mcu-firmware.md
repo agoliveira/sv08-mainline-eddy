@@ -85,6 +85,13 @@ This is the point of no return for each board: after it, the board no
 longer runs Sovol's firmware. Your dumps from chapter 2 are the way
 back.
 
+The commands below are for Linux. On Windows, write the same two
+image files with STM32CubeProgrammer as shown, with screenshots, in
+[step 7 of Rappetor's guide](https://github.com/Rappetor/Sovol-SV08-Mainline#step-7---flash-katapult-bootloader):
+`katapult-mainboard-512k.bin` to the mainboard and
+`katapult-toolhead-128k.bin` to the toolhead, both at address
+`0x08000000`. That was not tested here.
+
 Shut the printer down and switch it off:
 
 ```

@@ -19,7 +19,11 @@ device and needs a different configuration.
   recommended.** The stock 8 GB module does boot this system, but the
   complete installation described here occupies close to 6 GB before a
   single G-code file or timelapse is stored.
-- A Linux PC with `openocd`, `xz` and an SSH client
+- A Linux PC with `openocd`, `xz` and an SSH client. Everything in
+  this guide was done from Linux; Windows was not tested. If you work
+  from Windows, [Rappetor's guide](https://github.com/Rappetor/Sovol-SV08-Mainline) describes writing the eMMC and
+  flashing the boards with Windows tools, and the values used here
+  (image, sizes, firmware settings) still apply.
 - For the unlucky case only: a USB keyboard, to use with the printer's
   HDMI screen if the first boot does not join your Wi-Fi
 
