@@ -50,9 +50,10 @@ command above.
 master switch. Set it to `False` and restart to mute every signal.
 
 **Volume.** The beeper generates its own tone at one fixed loudness,
-so the volume cannot be raised in software. On the printer this was
-written on, it is quiet. Check for a seal left over the buzzer's sound
-hole before considering a replacement part.
+so the volume cannot be raised in software. If it is quiet, open the
+knob LCD's case and look at the buzzer: on the printer this was
+written on, the factory seal was still stuck over its sound hole.
+Peeling it off made the beeper much louder.
 
 There is no signal on cancel or on errors. After a Klipper shutdown
 nothing can drive the beeper.
@@ -103,5 +104,22 @@ Things to know:
 - Rappetor's notes say this does not work with a Noctua 24 V 4010
   fan, and suggest `control: watermark` in that case.
 
-This was run for a short time only, with the stock fan. Treat the
-target and the minimum speed as starting values.
+Treat the target and the minimum speed as starting values. They were
+run for a short time with the stock fan, and then with the larger fan
+described below.
+
+**A larger fan.** The stock fan is small and noisy. A printed mount,
+[Sovol SV08 Electronics 8010 Fan Mount](https://www.printables.com/model/1104389-sovol-sv08-elecronics-8010-fan-mount),
+replaces the metal bottom plate of the electronics bay and holds an
+80 mm fan blowing straight onto the mainboard. With a two-wire 24 V
+8010 fan on the stock fan's connector and the section above unchanged,
+the fan idles at its 30% floor with the host at about 50 °C, and is
+much quieter than the stock one.
+
+Before choosing this, consider:
+
+- The fan takes its air from under the printer, so the printer needs
+  feet tall enough to leave that space open.
+- The electronics bay is no longer closed from below. A fan grill
+  keeps fingers, cables and debris out of the blades.
+- Keep the metal plate and its screws to be able to go back.
