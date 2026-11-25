@@ -69,8 +69,11 @@ Not verified, and marked as such where they appear:
 9. [Input shaper](docs/09-input-shaper.md)
 10. [Going back to Sovol's firmware](docs/10-rollback.md)
 11. [Troubleshooting](docs/11-troubleshooting.md)
+12. [Extras](docs/12-extras.md): beeper signals, temperature-controlled
+    mainboard fan
 
-The configuration files are in [`config/`](config/).
+The configuration files are in [`config/`](config/). Optional
+additions are in [`extras/`](extras/) and described in chapter 12.
 
 ## Conventions
 
