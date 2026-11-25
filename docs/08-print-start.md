@@ -137,7 +137,7 @@ enable_object_processing: True
 
 None of this was run. Only OrcaSlicer was used.
 
-## 8.6 Timelapse (installed, not print-tested)
+## 8.6 Timelapse
 
 On the **printer**:
 
@@ -169,4 +169,5 @@ Restart Moonraker and Klipper. In the slicer, add
 `TIMELAPSE_TAKE_FRAME` to the G-code run before each layer change, and
 enable the feature on Mainsail's Timelapse page.
 
-The plugin installed and loaded here. No print was made with it.
+Tested with a print: the frames were captured and the video was
+rendered at the end.

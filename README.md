@@ -51,7 +51,6 @@ Not verified, and marked as such where they appear:
 
 - Cura (only OrcaSlicer was used)
 - The exhaust fan of the enclosure kit
-- Timelapse beyond installation
 - Restoring the stock firmware (the backups were made and checked, the
   restore itself was not needed)
 - Day-to-day use of an 8 GB eMMC (it boots, see chapter 3)
