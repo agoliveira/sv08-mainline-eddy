@@ -69,15 +69,21 @@ At the top of `macros.cfg`:
 | `variable_clean_retract` | 4 | Retraction before wiping, in mm |
 | `variable_end_retract` | 6 | Retraction at the end of a print, in mm |
 | `variable_brush_z` | -1.5 | Brush pass height relative to the bed |
-| `variable_pad_z` | -1.2 | Steel strip wipe height |
+| `variable_pad_z` | -0.8 | Steel strip wipe height |
 | `variable_mesh_method` | `rapid_scan` | Mesh method |
 
 **`variable_pad_z` needs tuning on your printer.** The steel strip has
-no give. Watch the strip wipes at real print starts: if the nozzle
-presses, raise the value; if it does not touch, lower it by 0.1 at a
-time. Do not tune it on a cold printer: the reference it is measured
-from shifts a little when everything is hot, and a value that looks
-right cold is too deep hot.
+no give, and a value that is too deep presses the hot nozzle onto
+steel. The default, -0.8, is the value that worked on the one printer
+this guide comes from. Nothing says it suits yours, and using it
+unchanged is at your own risk.
+
+The cautious way: set it to `0` before your first print, then watch
+the strip wipes at real print starts and lower it by 0.2 at a time
+until the nozzle just brushes the strip. If it ever presses, raise it.
+Do not tune it on a cold printer: the reference it is measured from
+shifts a little when everything is hot, and a value that looks right
+cold is too deep hot.
 
 **The brush gets one pass only**, at full temperature. Passing a
 cooler nozzle carrying half-set plastic through it tears the silicone
