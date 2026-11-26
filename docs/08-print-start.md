@@ -36,13 +36,15 @@ be clear of the previous print.
 
 ## 8.2 Before the first print
 
-Check the wipe path without touching anything. This runs the cleaning
-4.5 mm higher than normal; it heats the nozzle, so it takes a few
-minutes:
+`CLEAN_NOZZLE` runs the cleaning by itself, in the same order as
+`START_PRINT`: it homes X and Y, softens the nozzle behind the bed,
+homes Z, measures the bed height beside the brush, wipes, and homes Z
+again. The printer does not need to be homed first. The bed must be
+clear, as at a print start.
 
-```
-G28
-```
+Check the wipe path first, without touching anything. This runs the
+wipes 4.5 mm higher than normal; it heats the nozzle, so it takes a
+few minutes:
 
 ```
 CLEAN_NOZZLE BRUSH_Z=3
