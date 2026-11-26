@@ -21,6 +21,10 @@ Sovol's. Differences that matter:
 - **The mainboard fan** runs while a heater or the X/Y motors are
   active and for five minutes after, instead of always.
 - **`max_accel: 20000`** instead of 40000. Chapter 9.
+- **Idle timeout of 30 minutes.** Sovol's value amounts to about 69
+  days, so heaters left on stayed on. After 30 idle minutes the motors
+  are released and the heaters switched off, except while a print is
+  paused.
 - **Removed:** Sovol's Z-offset calibration, power-loss recovery and
   the macros that call shell scripts.
 
@@ -106,3 +110,13 @@ eddy sensor has to be calibrated first.
 Sovol's enclosure kit adds an exhaust fan on mainboard pin `PA2`. Its
 section is present but commented out in `printer.cfg`, with a matching
 commented line in the `_ALL_FAN_OFF` macro. It was not tested.
+
+## 6.5 Keep a copy of your configuration
+
+All calibration results are stored at the end of `printer.cfg`. After
+chapters 7 to 9, and whenever `SAVE_CONFIG` has changed something you
+care about, copy the configuration to the **PC**:
+
+```
+ssh sovol@PRINTER_ADDRESS "tar --create --gzip --file=- --directory=/home/sovol printer_data/config" > sv08-mainline-config.tar.gz
+```

@@ -66,6 +66,18 @@ Run `QUAD_GANTRY_LEVEL`, then `G28 Z`, then the mesh again.
 `descend_z` is too small for a nozzle with plastic hanging from it.
 Chapter 7 explains the 2.5 mm used here.
 
+## Input shaper
+
+**Prints look over-smoothed, or `SHAPER_CALIBRATE` suggests much lower
+accelerations than before, after a slicer calibration print.**
+The test left its last shaper values active. Do a Firmware Restart
+(section 9.5).
+
+**`MCU 'extra_mcu' shutdown: Timer too close` at the end of
+`SHAPER_CALIBRATE`.**
+Seen once, with the nozzle heater on. Do a Firmware Restart and run it
+with the heaters off (section 9.3).
+
 ## Print start
 
 **Plastic is pushed around the nozzle instead of being removed.**

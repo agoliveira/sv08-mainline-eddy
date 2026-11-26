@@ -40,6 +40,11 @@ Restart Klipper afterwards (Firmware Restart in Mainsail).
 Fit the toolhead exactly as you print with it, cover included, and
 remove anything loose from the printer.
 
+Run it with all heaters off, and do a Firmware Restart first if
+anything was printed since the last restart. With the nozzle heater
+on, the toolhead board shut down once here with `Timer too close` at
+the moment the calculation started. The results were still valid.
+
 ```
 G28
 ```
@@ -67,7 +72,7 @@ Your values will differ; measure your own.
 The configuration in this repository leaves out Sovol's
 `damping_ratio_x: 0.001` and `damping_ratio_y: 0.001`. Klipper's
 default is 0.1, and its calibration evaluates shapers around that
-value.
+value. Section 9.5 describes how to measure it.
 
 ## 9.4 Acceleration
 
@@ -80,3 +85,31 @@ surfaces, not limits: infill and travel can go much higher.
 instead of Sovol's 40000. What is actually used comes from the slicer.
 For sharp outer walls, set the slicer's outer wall acceleration at or
 below the lower of your two figures.
+
+These figures depend on the damping ratio in effect, which is one more
+reason to read them after a clean restart.
+
+## 9.5 Damping ratio and slicer tests
+
+`SHAPER_CALIBRATE` finds the shaper type and frequency. It does not
+measure the damping ratio, and Klipper uses 0.1 unless told otherwise.
+A slicer's damping test can find a better value (OrcaSlicer has one in
+its Calibration menu):
+
+- Enter the frequencies the accelerometer gave. Do not take the
+  frequencies from a printed tower in their place: here the tower's
+  did not match the accelerometer's, which gave the same result on
+  three runs.
+- Read each wall by the letter on it. The wall marked X runs along the
+  Y axis; that is by design.
+- Pick the height where the ripples after a corner are weakest. If a
+  wall looks the same over a wide range, keep 0.1 for that axis.
+- Put the result in `printer.cfg`, in `[input_shaper]`, as
+  `damping_ratio_x` and `damping_ratio_y`. Not in the start G-code.
+
+Here that gave 0.171 for X, and Y stayed at 0.1.
+
+**These test prints leave the printer altered.** They set the shaper
+with `SET_INPUT_SHAPER`, and the last value stays active until Klipper
+restarts. Here the printer was left with a damping ratio of 0.4 on
+both axes. Do a Firmware Restart after any slicer calibration print.

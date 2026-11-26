@@ -54,6 +54,8 @@ Not verified, and marked as such where they appear:
 - Restoring the stock firmware (the backups were made and checked, the
   restore itself was not needed)
 - Day-to-day use of an 8 GB eMMC (it boots, see chapter 3)
+- Updating Klipper later and reflashing the two boards afterwards
+  (section 5.7)
 
 ## Chapters
 
@@ -97,6 +99,10 @@ was not tested, see Status) or on the **printer** (over SSH).
   on eddy current probes.
 - The Armbian maintainer of the Sovol SV08 board support.
 - Sovol, whose stock configuration these files were converted from.
+
+## Changes
+
+See [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 

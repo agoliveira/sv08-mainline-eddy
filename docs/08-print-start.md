@@ -34,13 +34,23 @@ During step 2 the Z axis is not homed yet, so the toolhead travels to
 the back at whatever height it was left at, plus 5 mm. The bed must
 be clear of the previous print.
 
+On the printer this guide comes from, the whole sequence took about
+5 minutes 40 seconds from starting the print to the first layer, with
+the bed at 75 °C and the nozzle at 220 °C. Most of the variation
+comes from how long the bed takes to heat.
+
+A cancelled print does not go through `END_PRINT`, so it skips the
+retraction at the end and leaves more plastic on the nozzle. The next
+start copes with that, because it softens the nozzle before anything
+else.
+
 ## 8.2 Before the first print
 
 `CLEAN_NOZZLE` runs the cleaning by itself, in the same order as
 `START_PRINT`: it homes X and Y, softens the nozzle behind the bed,
-homes Z, measures the bed height beside the brush, wipes, and homes Z
-again. The printer does not need to be homed first. The bed must be
-clear, as at a print start.
+homes Z, measures the bed height beside the brush, wipes, homes Z
+again, and switches the nozzle heater off. The printer does not need
+to be homed first. The bed must be clear, as at a print start.
 
 Check the wipe path first, without touching anything. This runs the
 wipes 4.5 mm higher than normal; it heats the nozzle, so it takes a
@@ -179,3 +189,13 @@ enable the feature on Mainsail's Timelapse page.
 
 Tested with a print: the frames were captured and the video was
 rendered at the end.
+
+## 8.7 Filament tuning
+
+`pressure_advance: 0.025` in `printer.cfg` is Sovol's value, not a
+measurement. Filament tuning is outside this guide, but the order
+matters: settle the nozzle temperature first, then run flow ratio,
+pressure advance and maximum volumetric speed at that temperature. If
+the slicer's filament profile has its own pressure advance enabled, it
+is sent with every print and overrides the value in `printer.cfg`. Do
+a Firmware Restart after calibration prints (section 9.5).

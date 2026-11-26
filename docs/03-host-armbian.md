@@ -179,7 +179,14 @@ indented, then run `netplan apply`.
 
 ## 3.5 Base setup
 
-On the **printer**. A host name of your choice (here `sv08`):
+On the **printer**. First replace the password of the `sovol` user,
+which section 3.3 set to `sovol`:
+
+```
+passwd
+```
+
+A host name of your choice (here `sv08`):
 
 ```
 sudo hostnamectl set-hostname sv08
