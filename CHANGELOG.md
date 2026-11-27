@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-11-27
+
+- New chapter 13, Updating, written from a real update (Klipper
+  `v0.14.0-0` to `v0.14.0-1`) with both boards reflashed over USB.
+  Section 5.7 now points to it.
+- Section 7.4 and troubleshooting: tap only at a stable nozzle
+  temperature.
+- README: updating is no longer listed as not verified; going back
+  after an update is.
+
 ## 2026-11-26
 
 - `CLEAN_NOZZLE` runs in the same order as `START_PRINT` (soften

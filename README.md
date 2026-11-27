@@ -23,6 +23,7 @@ sensor once two settings are known:
 - Mainline Klipper, Moonraker, Mainsail, KlipperScreen on the HDMI
   touch screen, the knob LCD, and the camera
 - Katapult on both boards, so later firmware updates need no ST-Link
+  (done once, see chapter 13)
 - Contactless homing, gantry levelling and fast mesh scanning with the
   eddy sensor, and nozzle "tap" for the Z reference at every print
 - A print start sequence with nozzle cleaning, adaptive mesh and an
@@ -54,8 +55,8 @@ Not verified, and marked as such where they appear:
 - Restoring the stock firmware (the backups were made and checked, the
   restore itself was not needed)
 - Day-to-day use of an 8 GB eMMC (it boots, see chapter 3)
-- Updating Klipper later and reflashing the two boards afterwards
-  (section 5.7)
+- Going back to an earlier Klipper version after an update
+  (section 13.6)
 
 ## Chapters
 
@@ -72,6 +73,7 @@ Not verified, and marked as such where they appear:
 11. [Troubleshooting](docs/11-troubleshooting.md)
 12. [Extras](docs/12-extras.md): beeper signals, temperature-controlled
     mainboard fan
+13. [Updating](docs/13-updating.md)
 
 The configuration files are in [`config/`](config/). Optional
 additions are in [`extras/`](extras/) and described in chapter 12.

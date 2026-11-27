@@ -150,6 +150,12 @@ The nozzle touches the bed in this step. Nozzle and bed must be clean,
 nozzle cold. `[stepper_z]` already has `position_min: -2`, which tap
 needs.
 
+Tap only at a stable nozzle temperature: fully cold, as here, or held
+at a set temperature, as `START_PRINT` does. A nozzle that is cooling
+down shrinks between samples. Here that showed as contact heights
+falling by about 0.02 mm per tap, and Klipper rejecting them with
+`Probe samples exceed samples_tolerance`.
+
 ```
 G28 Z
 ```

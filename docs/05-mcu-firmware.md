@@ -217,8 +217,7 @@ Both entries now start with `usb-Klipper_stm32f103xe_`.
 
 ## 5.7 Later firmware updates
 
-When Klipper is updated on the host, the boards should be rebuilt and
-reflashed with the same two named configurations (`config.mainboard`,
-`config.toolhead`). A board running Klipper has to be sent back into
-Katapult first; `flashtool.py` has a `--request-bootloader` option for
-that. This was not exercised while writing this guide.
+When Klipper is updated on the host, the boards can be rebuilt and
+reflashed over USB with the same two named configurations
+(`config.mainboard`, `config.toolhead`), without the ST-Link.
+[Chapter 13](13-updating.md) has the procedure.

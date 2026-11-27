@@ -58,6 +58,13 @@ loads:
 grep --line-number "max_sensor_hz" ~/printer_data/config/eddy.cfg
 ```
 
+**`Probe samples exceed samples_tolerance` during a tap, with the
+contact heights falling steadily from one sample to the next.**
+The nozzle is cooling while it taps, for example right after
+`CLEAN_NOZZLE`, which ends with the heater off. Tap at a held
+temperature (section 7.4). Samples that scatter up and down point to a
+dirty nozzle instead.
+
 **The bed mesh shows a tilt of a millimetre or more.**
 The gantry was not levelled after the Z motors were last released.
 Run `QUAD_GANTRY_LEVEL`, then `G28 Z`, then the mesh again.
